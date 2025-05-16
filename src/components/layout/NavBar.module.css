@@ -1,0 +1,56 @@
+.navbar {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 1. Container interno (Container já cria uma <div>) vira flex */
+.navbar > div {
+  display: flex;
+  align-items: center;
+  /* remove justify-content: space-between para deixar o UL crescer */
+  padding: 1rem 2rem;
+}
+
+/* 2. Brand (logo + texto) */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  height: 2.5rem;
+}
+
+.brandText {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4e2721;
+}
+
+/* 3. Lista agora ocupa todo o espaço disponível */
+.list {
+  display: flex;
+  flex: 1; /* faz o UL crescer até preencher o container */
+  justify-content: space-evenly; /* distribui igualmente cada <li> */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 4. Links dentro dos itens */
+.item a {
+  color: #4e2721;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color .2s;
+}
+
+.item a:hover {
+  color: #ecc94b;
+}

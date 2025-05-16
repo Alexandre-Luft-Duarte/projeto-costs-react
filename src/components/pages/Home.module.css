@@ -1,0 +1,43 @@
+/* 2) Container já existente */
+.home_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    text-align: center;     /* centraliza cabeçalhos e parágrafos */
+    color: #462521;
+}
+
+/* 3) Título */
+.home_container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+    }
+
+/* 4) Subtítulo / descrição */
+.home_container p {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
+}
+
+/* 6) Ajuste para telas maiores */
+@media (min-width: 768px) {
+    .home_container h1 {
+    font-size: 3rem;
+    }
+    .home_container p {
+    font-size: 1.25rem;
+    }
+    .home_container a {
+    padding: 1em 2em;
+    }
+}
+
+.home_container img {
+    width: 500px;
+    margin: 2em 0;
+}

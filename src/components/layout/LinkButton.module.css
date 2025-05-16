@@ -1,0 +1,14 @@
+.btn {
+    display: inline-block;
+    background: #FFBB33;
+    color: #462521;
+    padding: 0.75em 1.5em;
+    border-radius: 0.25em;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

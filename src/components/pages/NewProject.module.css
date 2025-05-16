@@ -1,0 +1,22 @@
+.newproject_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2em;
+    text-align: center;     
+    color: #462521;
+}
+
+.newproject_container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+    }
+
+.home_container p {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
+}
