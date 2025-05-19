@@ -4,8 +4,9 @@ import Select from '../form/Select';
 import SubmitButton from '../form/SubmitButton';
 import {useEffect, useState} from 'react'
 
-function ProjectForm ({btnText}){
-    const[categories, setCategories] = useState([])
+function ProjectForm ({ handleSubmit, btnText, projectData }){ 
+    const[categories, setCategories] = useState([]) /* Inicializa o estado categories como um array vazio */
+    const[project, setProject] = useState(projectData || {}) // /* Inicializa o estado project como um objeto vazio ou com os dados do projeto recebidos como props */
     
     useEffect(() => {
     fetch('http://localhost:5000/categories', { /*faz uma requisição para a API local*/
@@ -21,8 +22,13 @@ function ProjectForm ({btnText}){
         .catch((err) => console.log(err)); /* Se houver um erro, ele é capturado e exibido no console. */
     }, [])
 
+    const submit = (e) => { 
+        e.preventDEfault() // Previne o comportamento padrão do formulário de recarregar a página
+        handleSubmit(project) // Chama a função handleSubmit passada como prop, passando o projeto como argumento
+    }
+
     return(
-        <form className={styles.form}>
+        <form onSubmit={submit} className={styles.form}> 
             <Input 
                 type="text" 
                 text="Nome do Projeto" 
