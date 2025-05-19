@@ -21,7 +21,6 @@ function ProjectForm ({btnText}){
         .catch((err) => console.log(err)); /* Se houver um erro, ele é capturado e exibido no console. */
     }, [])
 
-
     return(
         <form className={styles.form}>
             <Input 
