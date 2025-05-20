@@ -1,9 +1,9 @@
 import ProjectForm from '../project/ProjectForm'; /* Importa o componente ProjectForm */
 import styles from './NewProject.module.css'; 
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function NewProject(){
-    const history = useHistory()
+    const navigate = useNavigate()
 
     function createPost(project){ // Recebe o projeto do formulário
         // initializr cost and service

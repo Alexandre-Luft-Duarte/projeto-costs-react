@@ -23,14 +23,24 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
     }, [])
 
     const submit = (e) => { 
-        e.preventDEfault() // Previne o comportamento padrão do formulário de recarregar a página
-        handleSubmit(project) // Chama a função handleSubmit passada como prop, passando o projeto como argumento
+        e.preventDefault() // Previne o comportamento padrão do formulário de recarregar a página
+        //handleSubmit(project) // Chama a função handleSubmit passada como prop, passando o projeto como argumento
+        console.log(project)
     }
 
     function handleChange(e) { // é o evento que ocorre quando o usuário altera o valor de um campo do formulário
         setProject({ ...project, [e.target.name]: e.target.value }) // Atualiza o estado do projeto com os novos valores dos campos
-        console.log(project) // Exibe o projeto atualizado no console
     }
+
+     function handleCategory(e) { 
+        setProject({ 
+            ...project, 
+            categorie: {
+                id: e.target.value,
+                name: e.target.options[e.target.selectedIndex].text, // Atualiza o estado do projeto com a categoria selecionada
+            },
+          }) 
+        }       
 
     return(
         <form onSubmit={submit} className={styles.form}> 
@@ -39,7 +49,9 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
                 text="Nome do Projeto" 
                 name="name" 
                 placeholder="Insira o Projeto"
-                handleOnChange={handleChange} // Atualiza o estado do projeto com o novo valor
+
+                handleOnChange={handleChange}
+                value={project.name}
             />    
             <Input 
                 type="number" 
@@ -47,11 +59,16 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
                 name="budget" 
                 placeholder="Insira o Orçamento"
                 handleOnChange={handleChange}
+
+                value={project.budget}
+
             />
             <Select 
                 name="category_id" 
                 text="Selecione a categoria" 
                 options={categories}
+                handleOnChange={handleCategory}
+                value={project.categorie ? project.categorie.id : ''}
             />
             <SubmitButton text={btnText}/>
         </form>
