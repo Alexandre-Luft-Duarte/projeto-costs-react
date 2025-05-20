@@ -27,6 +27,11 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
         handleSubmit(project) // Chama a função handleSubmit passada como prop, passando o projeto como argumento
     }
 
+    function handleChange(e) { // é o evento que ocorre quando o usuário altera o valor de um campo do formulário
+        setProject({ ...project, [e.target.name]: e.target.value }) // Atualiza o estado do projeto com os novos valores dos campos
+        console.log(project) // Exibe o projeto atualizado no console
+    }
+
     return(
         <form onSubmit={submit} className={styles.form}> 
             <Input 
@@ -34,12 +39,14 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
                 text="Nome do Projeto" 
                 name="name" 
                 placeholder="Insira o Projeto"
+                handleOnChange={handleChange} // Atualiza o estado do projeto com o novo valor
             />    
             <Input 
                 type="number" 
                 text="Valor do Orçamento" 
                 name="budget" 
                 placeholder="Insira o Orçamento"
+                handleOnChange={handleChange}
             />
             <Select 
                 name="category_id" 
