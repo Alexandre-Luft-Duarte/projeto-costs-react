@@ -24,8 +24,7 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
 
     const submit = (e) => { 
         e.preventDefault() // Previne o comportamento padrão do formulário de recarregar a página
-        //handleSubmit(project) // Chama a função handleSubmit passada como prop, passando o projeto como argumento
-        console.log(project)
+        handleSubmit(project) // Chama a função handleSubmit passada como prop, passando o projeto como argumento
     }
 
     function handleChange(e) { // é o evento que ocorre quando o usuário altera o valor de um campo do formulário
@@ -51,7 +50,7 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
                 placeholder="Insira o Projeto"
 
                 handleOnChange={handleChange}
-                value={project.name}
+                value={project.name ? project.name: ''} 
             />    
             <Input 
                 type="number" 
@@ -59,8 +58,7 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
                 name="budget" 
                 placeholder="Insira o Orçamento"
                 handleOnChange={handleChange}
-
-                value={project.budget}
+                value={project.budget ? project.budget: ''}
 
             />
             <Select 
