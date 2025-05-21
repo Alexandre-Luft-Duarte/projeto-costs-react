@@ -1,0 +1,25 @@
+.message {
+    width:100%; 
+    margin:auto;  
+    padding:1em; 
+    float:left; 
+    display:block; 
+    margin-bottom:10px;
+    font-family:Verdana, Arial, Helvetica, sans-serif; 
+    font-weight:100; 
+    font-size:16px;
+}
+
+.sucess{
+    background-color:#A6FFBC; 
+    border:2px #00bd00 solid; 
+    color:#00bd00; 
+    border-radius:5px;
+}
+
+.error {
+    background-color:#FFCACA; 
+    border:2px #a60202 solid; 
+    color:#a60202; 
+    border-radius:5px;
+}

@@ -12,6 +12,7 @@
 
 .start {
     justify-content: flex-start;
+    margin-top: 2em;
 }
 
 .column {

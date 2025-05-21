@@ -3,7 +3,6 @@ import Input from '../form/Input';
 import Select from '../form/Select';
 import SubmitButton from '../form/SubmitButton';
 import {useEffect, useState} from 'react'
-import { Navigate } from 'react-router-dom';
 
 function ProjectForm ({ handleSubmit, btnText, projectData }){ 
     const[categories, setCategories] = useState([]) /* Inicializa o estado categories como um array vazio */
@@ -35,7 +34,7 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
      function handleCategory(e) { 
         setProject({ 
             ...project, 
-            categorie: {
+            category: {
                 id: e.target.value,
                 name: e.target.options[e.target.selectedIndex].text, // Atualiza o estado do projeto com a categoria selecionada
             },

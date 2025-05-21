@@ -1,0 +1,12 @@
+.project_container {
+    padding: 2em;
+}
+
+.title_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.h1 {
+    color: #462521;
+}

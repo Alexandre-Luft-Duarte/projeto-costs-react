@@ -1,0 +1,121 @@
+.project_card {
+    padding: 1.5em 1em 1em 1em;
+    border: none;
+    border-radius: 16px;
+    width: 24%;
+    margin: 0.5%;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 1.5px 6px rgba(0,0,0,0.03);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 230px;
+}
+
+.project_card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13), 0 3px 12px rgba(0,0,0,0.07);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.project_card h4 {
+    background-color: #462521;
+    color: #ffbb33;
+    padding: 0.4em;
+    margin-bottom: 1.3em;
+    font-size: 1.3em;
+    border-radius: 8px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.project_card p {
+    color: #444;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+.project_card p span {
+    font-weight: bold;
+    color: #222;
+}
+
+.category_text {
+    display: flex;
+    align-items: center;
+    font-size: 0.98em;
+    margin-bottom: 0.5em;
+}
+
+.category_text span {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 7px;
+    border: 2px solid #eee;
+}
+
+.category_text .infra {
+    background-color: #FFAEBC;
+}
+.category_text .desenvolvimento {
+    background-color: #A0E7E5;
+}
+.category_text .comercial {
+    background-color: #B4F8C8;
+}
+.category_text .marketing {
+    background-color: #FFAEBC;
+}
+
+.project_card_actions {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: flex-end;
+}
+
+.project_card_actions a,
+.project_card_actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4em;
+    font-size: 1.35em;
+    color: #333;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.project_card_actions a:hover,
+.project_card_actions button:hover {
+    background: #f6f6f6;
+}
+
+.project_card_actions a svg {
+    color: #6ec1e4;
+    transition: color 0.2s;
+}
+
+.project_card_actions a:hover svg {
+    color: #3498db;
+}
+
+.project_card_actions button svg {
+    color: #ff7b7b;
+    transition: color 0.2s;
+}
+
+.project_card_actions button:hover svg {
+    color: #e74c3c;
+}
