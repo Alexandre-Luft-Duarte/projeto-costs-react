@@ -3,6 +3,7 @@ import Input from '../form/Input';
 import Select from '../form/Select';
 import SubmitButton from '../form/SubmitButton';
 import {useEffect, useState} from 'react'
+import { Navigate } from 'react-router-dom';
 
 function ProjectForm ({ handleSubmit, btnText, projectData }){ 
     const[categories, setCategories] = useState([]) /* Inicializa o estado categories como um array vazio */
@@ -17,8 +18,8 @@ function ProjectForm ({ handleSubmit, btnText, projectData }){
     })
         .then((resp) => resp.json()) /* Quando a resposta chega, ela é convertida de JSON para um objeto JavaScript.*/
         .then((data) => {
-            setCategories(data)
-        }) /* O resultado é armazenado no estado categories usando o setCategories. */
+            setCategories(data) /* O resultado é armazenado no estado categories usando o setCategories. */
+        })
         .catch((err) => console.log(err)); /* Se houver um erro, ele é capturado e exibido no console. */
     }, [])
 

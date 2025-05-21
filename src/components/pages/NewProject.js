@@ -20,6 +20,9 @@ function NewProject(){
             .then((resp) => resp.json()) // Quando a resposta chega, ela é convertida de JSON para um objeto JavaScript.
             .then((data) => {
                 console.log(data) // Exibe os dados do projeto criado no console
+                //redirect
+                navigate('/projects');
+                
              })
              .catch((err) => console.log(err))
     }
