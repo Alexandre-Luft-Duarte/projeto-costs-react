@@ -7,6 +7,7 @@ import Container from './components/layout/Container';  // Importa o componente 
 import NavBar from './components/layout/Navbar';    // Importa o menu de navegação
 import Projects from './components/pages/Projects'; // Importa a página de Projetos
 import Footer from './components/layout/Footer';    // Importa o rodapé
+import Project from './components/pages/Project';
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
       <NavBar /> {/* Exibe a barra de navegação em todas as páginas */}
       <Routes> {/* Define as rotas da aplicação */}
         {/* Cada Route define um caminho e o componente que será exibido */}
-        <Route path="/" element={<Container customClass="min-height" ><Home /></Container>} />
-        <Route path="/contact" element={<Container customClass="min-height" ><Contact /></Container>} />
-        <Route path="/company" element={<Container customClass="min-height" ><Company /></Container>} />
-        <Route path="/newproject" element={<Container customClass="min-height" ><NewProject /></Container>} />
-        <Route path="/projects" element={<Container customClass="min-height" ><Projects /></Container>} />
+        <Route path="/" element={<Container customClass="min-height"> <Home /></Container>} />
+        <Route path="/contact" element={<Container customClass="min-height"> <Contact /></Container>} />
+        <Route path="/company" element={<Container customClass="min-height"> <Company /></Container>} />
+        <Route path="/newproject" element={<Container customClass="min-height"> <NewProject /></Container>} />
+        <Route path="/projects" element={<Container customClass="min-height"> <Projects /></Container>} />
+        <Route path="/project/:id" element={<Container customClass="min-height"> <Project /></Container>} />
       </Routes>
       <Footer /> {/* Exibe o rodapé em todas as páginas */}
     </Router>
