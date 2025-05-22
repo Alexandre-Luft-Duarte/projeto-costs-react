@@ -34,6 +34,20 @@ function Projects(){
             .catch(err => console.log(err))
         }, 500)  
     }, [])
+
+    function removeProject(id) {
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((resp) => resp.json())
+        .then(() => {
+            setProjects(projects.filter((project) => project.id !== id))
+        })
+        .catch(err => console.log(err))
+    }
     
     return (
         <div className={styles.project_container}>
@@ -52,11 +66,12 @@ function Projects(){
                     budget={project.budget}
                     category={project.category?.name}
                     key={project.id}
+                    handleRemove={removeProject}
                     />       
                     ))}
                 {!removeLoading && <Loading />}
-                {removeLoading && projects.length === 0 (
-                    <p>Não há projetos criados!</p>
+                {removeLoading && projects.length === 0 && (
+                    <p className={styles.p}>Não há projetos criados!</p>
                 )}
             </Container>    
         </div>

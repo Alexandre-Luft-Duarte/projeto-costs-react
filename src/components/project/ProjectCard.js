@@ -3,6 +3,14 @@ import { BsPencil, BsFillTrashFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
  
 function ProjectCard({id, name, budget, category, handleRemove}) {
+
+    const remove = (e) => {
+        e.preventDefault()
+        if (window.confirm('Tem certeza que deseja excluir esse projeto?')) {
+            handleRemove(id)
+        }
+    }
+
     return (
         <div className={styles.project_card}>
             <h4>{name}</h4>
@@ -16,12 +24,12 @@ function ProjectCard({id, name, budget, category, handleRemove}) {
                 <Link to="/" title="Editar">
                     <BsPencil />
                 </Link>
-                <button title='Excluir'>
+                <button onClick={remove} title='Excluir'>
                     <BsFillTrashFill />
                 </button> 
             </div>
         </div>
     );
-} 
+}
 
 export default ProjectCard;
